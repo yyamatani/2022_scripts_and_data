@@ -10,7 +10,7 @@
 args1 = commandArgs(trailingOnly=TRUE)[1]
 input_file <- args1
 
-# Reference file 1: House keeping gene data
+# Reference file 1: Housekeeping gene data
 args2 = commandArgs(trailingOnly=TRUE)[2]
 reference_file <- args2
 
@@ -45,7 +45,7 @@ library(RUVSeq)
 input <- read.table(input_file, header=TRUE, row.names=1, sep="\t", quote="")
 data <- as.matrix(input)
 
-# Read reference file: House keeping gene data
+# Read reference file: Housekeeping gene data
 reference <- read.table(reference_file, header=TRUE, row.names=1, sep="\t", quote="")
 # Get House keeping genes 
 house_keeping_gene <- rownames(reference)
@@ -60,7 +60,7 @@ stem_cell_type <- c(meta_data$Stem_cell_type)
 
 
 ## -- Step 4: Run RUVg function in RUVSeq version 1.18.0 (Risso et al., 2014) to estimate and correct batch effects -- ##
-# 4-1. Get expression data of house keeping genes
+# 4-1. Get expression data of housekeeping genes
 cIdx <- rownames(data)[(rownames(data) %in% rownames(reference))]
 # 4-2. Store data
 set <- newSeqExpressionSet(data, phenoData = data.frame(stem_cell_type, row.names=colnames(data)))

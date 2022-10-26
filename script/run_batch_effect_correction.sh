@@ -48,7 +48,7 @@ if [ ! -e ${output_data_table_after_RUVSeq_filtering_low_variance_data} ]; then 
 
 
 ## Step 1:
-# For using house keeping gene expression profile as negative control of batch effect correction by RUVSeq, select non-differentially expressed house keepig genes (non-DEHKG) following four steps
+# For using housekeeping gene expression profile as negative control of batch effect correction by RUVSeq, select non-differentially expressed house keepig genes (non-DEHKG) following four steps
 
 # 1-1. Make temporary directory 1
 temporary_dir_1=${output_dir}"01_temporary_dir/"; if [ ! -e ${temporary_dir_1} ]; then mkdir -p ${temporary_dir_1}; fi
@@ -121,10 +121,10 @@ unlink ${housekeeping_gene_data_table}; unlink ${mean_expression_data_of_houseke
 #=================#
 
 
-## Step 3: Caluculate the ratio of between-group and within-group variance and compare it before and after batch effect correction in stem cell types and research groups, respectively
-# 3-1. Caluculate the ratio of between-group and within-group variance and print the result in stem cell types
+## Step 3: Calculate the ratio of between-group and within-group variance and compare it before and after batch effect correction in stem cell types and research groups, respectively
+# 3-1. Calculate the ratio of between-group and within-group variance and print the result in stem cell types
 Rscript ${script_03_1_evaluating_the_ratio_of_between_and_within_variance_in_stem_cell_types} ${raw_data_table} ${output_data_table_after_RUVSeq}
-# 3-2. Caluculate the ratio of between-group and within-group variance and print the result in research groups
+# 3-2. Calculate the ratio of between-group and within-group variance and print the result in research groups
 Rscript ${script_03_2_evaluating_the_ratio_of_between_and_within_variance_in_research_groups} ${raw_data_table} ${output_data_table_after_RUVSeq}
 
 # If the ratio of variance (between-group variance / within-group variance) become smaller after the correction than before, the within-group variance is larger after the correction.
