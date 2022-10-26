@@ -11,10 +11,10 @@ sh script/run_batch_effect_correction.sh
 
 The executable code, "run_batch_effect_correction.sh" runs batch effect correction following steps:
 
-Step 1: For using house keeping gene expression profile as negative control of batch effect correction by RUVSeq, select non-differentially expressed house keepig genes (non-DEHKG) following four steps
+Step 1: For using the housekeeping gene expression profile as a negative control of batch effect correction by RUVSeq, select non-differentially expressed housekeeping genes (non-DEHKG) following four steps
 
 Step 2: Conduct batch effect correction by RUVSeq version 1.18.0 (Risso et al., 2014)
 
-Step 3: Caluculate the ratio of between-group and within-group variance and compare it before and after batch effect correction in stem cell types and research groups, respectively
+Step 3: Calculate the ratio of between-group and within-group variance and compare it before and after batch effect correction in stem cell types and research groups, respectively
 
 Step 4: Filter out genes with low variance
